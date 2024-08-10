@@ -7,6 +7,7 @@ import smtplib
 
 my_email = os.environ["MYEMAIL"]
 my_password = os.environ["MYPASSWORD"]
+to_addrs = os.environ["TOADDRS"]
 
 PRODUCT_URL = "https://www.amazon.com/Microphone-Loop-Out-Recorder-Streaming-Conference/dp/B08SBTK4QH/ref=sr_1_5?crid=V111270S4MTG&keywords=capture+card+ps4+to+laptop&qid=1687403013&sprefix=capture+card+ps4+to+laptop%2Caps%2C255&sr=8-5"
 header = {
@@ -30,5 +31,5 @@ if price <= 25:
         connection.starttls()
         connection.login(user=my_email, password=my_password)
         connection.sendmail(from_addr=my_email,
-                            to_addrs=os.environ["TOADDRS"],
+                            to_addrs=to_addrs,
                             msg=f"Subject:Your Item's Price Dropped\n\n{alert}")
