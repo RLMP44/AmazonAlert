@@ -1,11 +1,11 @@
 import os
 
 from bs4 import BeautifulSoup
+import lxml
 import requests
 import smtplib
 
 my_email = os.environ["MYEMAIL"]
-# created using app password generator
 my_password = os.environ["MYPASSWORD"]
 
 PRODUCT_URL = "https://www.amazon.com/Microphone-Loop-Out-Recorder-Streaming-Conference/dp/B08SBTK4QH/ref=sr_1_5?crid=V111270S4MTG&keywords=capture+card+ps4+to+laptop&qid=1687403013&sprefix=capture+card+ps4+to+laptop%2Caps%2C255&sr=8-5"
